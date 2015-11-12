@@ -20,7 +20,7 @@
                 <outlet property="bodyBox" destination="03K-fc-P26" id="Beo-bZ-p2B"/>
                 <outlet property="bodyLabel" destination="XkR-CV-X0H" id="dKH-yC-kQK"/>
                 <outlet property="responseBox" destination="Rl8-Ym-xwc" id="SNg-q6-rDg"/>
-                <outlet property="sendButton" destination="ILd-iD-yyb" id="grW-aw-ZyI"/>
+                <outlet property="sendButton" destination="ILd-iD-yyb" id="gQR-DL-HDN"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -267,7 +267,7 @@
             </items>
         </menu>
         <window title="network" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES" resizable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="132" y="254" width="600" height="620"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
@@ -341,6 +341,9 @@
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
+                        <connections>
+                            <action selector="sentAction:" target="Voe-Tx-rLC" id="5w0-47-oXz"/>
+                        </connections>
                     </textField>
                     <textField hidden="YES" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="03K-fc-P26">
                         <rect key="frame" x="20" y="249" width="560" height="114"/>
@@ -350,6 +353,9 @@
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
+                        <connections>
+                            <action selector="sentAction:" target="Voe-Tx-rLC" id="B5f-Fq-nrA"/>
+                        </connections>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ILd-iD-yyb">
                         <rect key="frame" x="515" y="21" width="71" height="32"/>

@@ -19,6 +19,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var URLBox: NSTextField!
     @IBOutlet weak var bodyBox: NSTextField!
     @IBOutlet var responseBox: NSTextView!
+    @IBAction func sentAction(sender: AnyObject) {
+        sendAction(sender)
+    }
 
     var session : NSURLSession!
     
@@ -54,6 +57,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func sendAction(sender: AnyObject) {
+        if sendButton.enabled == false
+        {
+            return
+        }
+        sendButton.enabled = false
+        self.responseBox.string = ""
         let urlString = URLBox.stringValue
         let url = NSURL(string: urlString)
         let request : NSMutableURLRequest = NSMutableURLRequest(URL: url!)
@@ -70,6 +79,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     {
                         self.responseBox.string = String(data: data!, encoding: NSUTF8StringEncoding)!
                     }
+                    self.sendButton.enabled = true
                 })
             })
             task.resume()
@@ -88,6 +98,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     {
                         self.responseBox.string = String(data: data!, encoding: NSUTF8StringEncoding)!
                     }
+                    self.sendButton.enabled = true
                 })
             })
             task.resume()
